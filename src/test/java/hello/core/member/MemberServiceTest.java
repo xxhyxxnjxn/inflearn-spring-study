@@ -19,5 +19,6 @@ public class MemberServiceTest {
 
         //then
         Assertions.assertEquals(member.getName(), findMember.getName());
+        //test
     }
 }
