@@ -1,6 +1,8 @@
 package hello.core;
 
+import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
+import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
@@ -17,14 +19,25 @@ import hello.core.order.OrderServiceImpl;
 public class AppConfig {
 
     public MemberService memberService() {
-        return new MemberServiceImpl(new MemoryMemberRepository());
+        return new MemberServiceImpl(getMemberRepository());
         //생성자 주입
         //MemberServiceImpl입장에서 보면 의존관계를 마치 외부에서 주입해주는 것 같다고 해서
         //DI(Dependency Injection) 의존관계 주입 또는 의존성 주입이라고 한다.
+
     }
 
     public OrderSerivce orderSerivce() {
-        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+        return new OrderServiceImpl(getMemberRepository(), discountPolicy());
+    }
+
+
+    private static MemberRepository getMemberRepository() {
+        //나중에 수정하고 싶으면 이 코드만 바꾸면 됨
+        return new MemoryMemberRepository();
+    }
+
+    public DiscountPolicy discountPolicy() {
+        return new FixDiscountPolicy();
     }
 
 }
