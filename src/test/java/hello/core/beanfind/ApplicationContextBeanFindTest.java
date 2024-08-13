@@ -42,6 +42,7 @@ public class ApplicationContextBeanFindTest {
     void findBeanByNameX(){
         //ac.getBean("xxxxx", MemberService.class);
 //        MemberService xxxxx = ac.getBean("xxxxx", MemberService.class);
+        //무조건 이 예외가 터져야 성공!
         assertThrows(NoSuchBeanDefinitionException.class,
                 () -> ac.getBean("xxxxx", MemberService.class));
     }
