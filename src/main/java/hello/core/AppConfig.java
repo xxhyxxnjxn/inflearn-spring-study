@@ -35,6 +35,10 @@ public class AppConfig {
      * bean으로 등록하면
      * 스프링 컨테이너에 등록됨
      * 보통 메서드 이름으로 등록된다.
+     * (name = xxx )으로 이름을 지정할 수도 있지만 default를 따르는게 좋다.
+     * authowired같은 것도 스프링 컨테이너에서 꺼내오는것
+     *
+     * 빈 이름은 항상 다른 이름을 부여해야한다.
      */
     public MemberService memberService() {
         return new MemberServiceImpl(getMemberRepository());

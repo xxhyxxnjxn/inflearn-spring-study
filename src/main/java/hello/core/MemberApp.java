@@ -31,6 +31,13 @@ public class MemberApp {
          * AppConfig에서 등록 해줬던 bean 리스트가 나온다.
          */
 
+        /**
+         * 0813
+         * ApplicationContext를 스프링 컨테이너라고 한다.
+         * ApplicationContext는 인터페이스이다. AppConfig를 사용했던 방식이 어노테이션 기반의 자바 설정 클래스로 스프링 컨테이너를 만든 것이다.
+         * AnnocationConfigApplicationContext는 ApplicationContext 인터페이스의 구현체이다.
+         */
+
 
         Member member = new Member(1L, "memberA", Grade.BASIC);
 
