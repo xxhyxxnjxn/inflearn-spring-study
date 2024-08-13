@@ -51,6 +51,7 @@ public class ApplicationContextSameBeanFindTest {
 
     @Configuration
     //static쓰는 이유 이 클래스 안에서면 samebeanconfig라는 클래스를 쓰겠다 !
+    //내부에서 쓴다면 아무 문제 없음
     static class SameBeanConfig {
         @Bean
         public MemberRepository memberRepository1() {
