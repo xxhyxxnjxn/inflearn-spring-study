@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ApplicationContextExtendsFindTest {
 
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
+    //annotion ~~ -> 구현 클래스
 
     @Test
     @DisplayName("부모 타임으로 조회시, 자식이 둘 이상 있으면, 중복 오류가 발생한다.")
