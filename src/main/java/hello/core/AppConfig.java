@@ -30,6 +30,9 @@ import org.springframework.context.annotation.Configuration;
  */
 public class AppConfig {
 
+    //@Bean memberService -> new MemoryMemberRepository();
+    //@Bean orderService -> new MemoryMemberRepository();
+
     @Bean
     /**
      * bean으로 등록하면
